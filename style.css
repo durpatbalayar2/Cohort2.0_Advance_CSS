@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  background-color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.box1 {
+  width: 400px;
+  height: 400px;
+  background: conic-gradient(from 45deg, red, blue, yellow);
+  animation: box1 3s infinite;
+}
+
+.box2 {
+  width: 500px;
+  height: 500px;
+  background-color: rgb(224, 218, 218);
+  border-radius: 5px;
+  animation: box2 2s infinite;
+}
+
+@keyframes box2 {
+  from {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 20px white;
+  }
+  to {
+    background-color: red;
+    border-radius: 50%;
+    box-shadow: 0 0 50px red;
+  }
+}
+
+@keyframes box1 {
+  0% {
+    background: conic-gradient(from 45deg, rgb(0, 208, 255), red, yellow);
+    transform: rotateX("45deg");
+    transform: rotateY("45deg");
+  }
+
+  25% {
+    background: conic-gradient(from 90deg, orange, red, rgb(132, 0, 255));
+     transform: rotateX("90deg");
+    transform: rotateY("90deg");
+  }
+  50% {
+    background: conic-gradient(from 180deg, blue, red, yellow);
+     transform: rotateX("180deg");
+    transform: rotateY("180deg");
+  }
+
+  75% {
+    background: conic-gradient(from 270deg, green, red, yellow);
+     transform: rotateX("270deg");
+    transform: rotateY("270deg");
+  }
+
+  100% {
+    background: conic-gradient(from 360deg, black, red, yellow);
+     transform: rotateX("360deg");
+    transform: rotateY("360deg");
+  }
+
+
+}
