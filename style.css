@@ -15,26 +15,17 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  anchor-name: --my_anchor;
-  overflow: hidden;
-  
+  gap: 30px;
 }
-
-
 
 .box {
-  height: 100px;
+  height: 200px;
   width: 200px;
-  border-radius: 20px;
+
   text-align: center;
   font-size: 35px;
-  padding: 30px;
- 
-}
 
-.box:hover {
-  anchor-name: --my_anchor;
+  transition: all 0.3s linear;
 }
 
 .red {
@@ -48,16 +39,12 @@ body {
   background-color: rgb(7, 209, 7);
 }
 
-.anchor {
-  background-color: #dacbcb;
-  border-radius: 20px;
-  position: absolute;
-  position-anchor: --my_anchor; /* Anchor name define*/
-  top: anchor(top);
-  left: anchor(left);
-  right: anchor(right);
-  bottom: anchor(bottom);
-  transition: all 0.5s linear;
-  pointer-events: none;
-  mix-blend-mode: difference;
+.box:hover {
+  transform: scale(1.2) !important;
+  opacity: 1 !important;
+}
+
+body:has(.box:hover).box {
+  transform: scale(0.8);
+  opacity: 0.8;
 }
