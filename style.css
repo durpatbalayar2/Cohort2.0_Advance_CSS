@@ -10,69 +10,54 @@ body {
 }
 
 body {
+  height: 100vh;
   background-color: #111;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 30px;
+  gap: 10px;
+  anchor-name: --my_anchor;
+  overflow: hidden;
+  
 }
 
-html {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-}
 
-@property --rotate {
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: false;
-}
-
-@keyframes borderAnimate {
-  from {
-    --rotate: 0deg;
-  }
-  to {
-    --rotate: 360deg;
-  }
-}
 
 .box {
-  max-width: 300px;
-  padding-inline: 10px; /*Horizontal Padding*/
-  padding-bottom: 10px;
-  color: whitesmoke;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-
-  border-radius: 15px;
-  background: linear-gradient(black) padding-box,
-    conic-gradient(from var(--rotate), black, rgb(255, 0, 123), white)
-      border-box;
-
-  border: 0px solid rgba(255, 255, 255, 0);
-  animation: borderAnimate 5s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  animation-play-state: paused;
-
-  box-shadow: 0 0 0px rgb(255, 0, 195);
-  text-shadow: 0 0 0px rgb(255, 0, 123);
-  color: white;
-  transform: skew(0deg, 0deg);
-  transition: all 0.5s linear;
+  height: 100px;
+  width: 200px;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 35px;
+  padding: 30px;
+ 
 }
 
 .box:hover {
-  animation-play-state: running;
-  border-width: 5px;
-  box-shadow: 0 0 50px rgb(255, 0, 195);
-  color: rgb(173, 59, 114);
-  text-shadow: 0 0 10px rgb(255, 0, 123);
-  transform: skew(15deg, 5deg);
+  anchor-name: --my_anchor;
 }
 
-.box img {
-  width: 100%;
+.red {
+  background-color: rgb(164, 13, 13);
+}
+.blue {
+  background-color: rgb(13, 13, 207);
+}
+
+.green {
+  background-color: rgb(7, 209, 7);
+}
+
+.anchor {
+  background-color: #dacbcb;
+  border-radius: 20px;
+  position: absolute;
+  position-anchor: --my_anchor; /* Anchor name define*/
+  top: anchor(top);
+  left: anchor(left);
+  right: anchor(right);
+  bottom: anchor(bottom);
+  transition: all 0.5s linear;
+  pointer-events: none;
+  mix-blend-mode: difference;
 }
